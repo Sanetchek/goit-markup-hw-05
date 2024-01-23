@@ -2,18 +2,21 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.02;
+  letter-spacing: 0.02em;
   background-color: #fff;
   color: #434455;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #2E2F42;
 }
 
 h1 {
   font-size: 56px;
-  line-height: 1.07; /* 60px/56 */
+  line-height: 1.07;
+  /* 60px/56 */
   letter-spacing: 1.12px;
 }
 
@@ -68,7 +71,7 @@ button {
 
 button:hover,
 button:focus {
-  background: #404BBF ;
+  background: #404BBF;
 }
 
 img {
@@ -484,4 +487,203 @@ img {
 
 .subscribe-icon {
   fill: #fff;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(46, 47, 66, 0.40);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: #FCFCFC;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.20);
+  z-index: 9999;
+  padding: 24px;
+  max-width: 408px;
+  width: 90%;
+  max-height: 584px;
+  overflow-y: auto;
+}
+
+.modal-close {
+  margin-left: auto;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #E7E9FC;
+  border: 1px solid rgba(46, 47, 66, 0.1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:focus,
+.modal-close:hover {
+  background: #404BBF;
+  border: 1px solid #404BBF;
+}
+
+.modal-close:focus .modal-close-icon,
+.modal-close:hover .modal-close-icon {
+  fill: #fff;
+}
+
+.modal-title {
+  color: #2E2F42;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin: 24px 0 16px;
+}
+
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-label-name {
+  color: #8E8F99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+  margin-bottom: 4px;
+}
+
+.modal-wrap:not(:first-child) {
+  margin-top: 8px;
+}
+
+.modal-wrap:nth-child(5) {
+  margin-top: 16px;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+  padding: 11px 16px 11px 38px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus-visible,
+.modal-textarea:focus-visible {
+  border: 1px solid #4D5AE5;
+  outline: none;
+  box-shadow: none;
+}
+
+.modal-input:focus-visible + .modal-icon {
+  fill: #4D5AE5;
+}
+
+.modal-label-wrap {
+  position: relative;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translatey(-50%);
+}
+
+.modal-textarea {
+  padding: 8px 16px;
+  resize: none;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 47, 66, 0.40);
+  height: 120px;
+}
+
+.modal-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.40);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.modal-checkbox {
+  position: absolute;
+  top: 0;
+  width: 0;
+  font-size: 0;
+  visibility: hidden;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-check {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.40);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-icon-check {
+  fill: #fff;
+}
+
+.modal-policy {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.modal-policy-text {
+  color: #8E8F99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.modal-policy-text a {
+  color: #4D5AE5;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+}
+
+.modal-checkbox:checked+label .modal-check {
+  background: #404BBF;
+}
+
+.modal-submit {
+  display: block;
+  width: 169px;
+  height: 56px;
+  margin: 16px auto 0;
+  padding: 16px 32px;
+  border-radius: 4px;
+  background: #4D5AE5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
